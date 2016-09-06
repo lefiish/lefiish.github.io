@@ -85,7 +85,7 @@ Pas loin de 100 fois plus rapide ! (Le gain peut varier selon les ordinateurs...
 
 `colSums()` (ainsi que `rowSums()`, `colMeans()`, `rowMeans()`) pour calculer des sommes en colonne (et autres) sont optimisées et à préférer.
 
-2.X Autres optimisations : indexation d'un *dataframe*, calcul hors boucle, précalcul
+2.3 Autres optimisations : indexation d'un *dataframe*, calcul hors boucle, précalcul
 -------------------------------------------------------------------------------------
 
 Indexer veut dire accéder à un élément d'une matrice ou d'un *dataframe*.
