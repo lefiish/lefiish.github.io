@@ -12,7 +12,7 @@ title_separator          : "-"
 name                     : "Thibault Poissonnier"
 description              : "Blog de Thibault Poissonnier"
 url                      : "https://lefiish.github.io"
-baseurl                  : "/blog"
+baseurl                  : 
 repository               : "lefiish/lefiish.github.io"
 teaser                   : # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 # breadcrumbs            : false # true, false (default)
