@@ -143,7 +143,7 @@ ggplot(xgb$evaluation_log, aes(x=iter, y=train_auc)) +
   ylab('AUC échantillon d\'apprentissage')
 ```
 
-![](Atelier_files/figure-markdown_github/unnamed-chunk-11-1.png)
+![](/assets/unnamed-chunk-11-1.png)
 
 L'AUC semble augmenter au fur et à mesure que le nombre d'itérations augmente. *Question 1* : est-il possible d'obtenir un AUC égal à 1 ?
 Pour rappel, voici les principaux paramètres et leur impact sur les performances : "positif" signifie que les performances augmentent si le paramètre prend des valeurs plus élevées.
@@ -154,4 +154,4 @@ Pour rappel, voici les principaux paramètres et leur impact sur les performance
 | *eta*        | Positif                     |
 | *max\_depth* | Positif                     |
 
-![](Atelier_files/figure-markdown_github/unnamed-chunk-12-1.png)
+![](/assets/unnamed-chunk-12-1.png)
