@@ -1,3 +1,5 @@
+Cet atelier a pour objectif de montrer l'utilisation du package `xgboost` pour créer des modèles de classification.
+
 1 Importation des données
 =========================
 
@@ -49,6 +51,18 @@ Il est aussi possible de recoder certaines variables caractère de manière ordi
 
 ``` r
 data <- data %>%
-  mutate(education2 = revalue(data$education, c('illiterate' = 0, 'basic.4y' = 1, 'basic.6y' = 2, 'basic.9y' = 3, 'high.school' = 4,
-                                                'professional.course' = 5, 'university.degree' = 6, 'unknown' = NA)))
+  mutate(education2 = revalue(education, c('illiterate' = 0, 'basic.4y' = 1, 'basic.6y' = 2, 'basic.9y' = 3, 'high.school' = 4,
+                                                'professional.course' = 5, 'university.degree' = 6, 'unknown' = NA)) %>% as.numeric) %>%
+  mutate(month2 = revalue(month, c('mar'=3, 'apr'=4, 'may'=5, 'jun'=6, 'jul'=7, 'aug'=8, 'sep'=9, 'oct'=10, 'nov'=11, 'dec'=12)) %>% as.numeric) %>%
+  mutate(day2 = revalue(day_of_week, c('mon'=1, 'tue'=2, 'wed'=3, 'thu'=4, 'fri'=5)) %>% as.numeric) %>%
+  mutate(poutcome2 = revalue(poutcome, c('failure'=0, 'nonexistent'=1, 'success'=2)) %>% as.numeric)
+
+data <- data[, !(colnames(data) %in% char)]
+```
+
+Rajoutons quelques variables bruitées, c'est-à-dire indépendantes de la cible à modéliser, afin de voir si nos algorithmes sauront ne pas faire d'*overfitting* sur ces variables.
+
+``` r
+for(i in 1:10)
+  data[, paste0('bruit', i)] <- sample.int(i+1, size = nrow(data), replace = TRUE)
 ```
