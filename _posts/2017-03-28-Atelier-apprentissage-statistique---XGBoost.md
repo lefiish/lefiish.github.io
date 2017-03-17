@@ -140,7 +140,7 @@ ggplot(xgb$evaluation_log, aes(x=iter, y=train_auc)) +
   ylab('AUC échantillon d\'apprentissage')
 ```
 
-![](assets/unnamed-chunk-8-1.png)
+![](/assets/unnamed-chunk-8-1.png)
 
 L'AUC semble augmenter au fur et à mesure que le nombre d'itérations augmente.
 ***Question 1*** : est-il possible d'obtenir un AUC égal à 1 ?
@@ -160,7 +160,7 @@ Le résultat doit être similaire à cette courbe :
     ## [31] train-auc:0.999999 
     ## [35] train-auc:1.000000
 
-![](assets/unnamed-chunk-9-1.png)
+![](/assets/unnamed-chunk-9-1.png)
 
 4.2 Validation croisée
 ----------------------
@@ -199,7 +199,7 @@ Une autre manière de faire, fortement recommandée, est d'utiliser la validatio
 
 3.  Faire la moyenne des 5 indicateurs de performance obtenus.
 
-![](5fold.png)
+![](/assets/5fold.png)
 
  
 
@@ -275,7 +275,7 @@ ggplot(tuning, aes(x = depth, y = eta, fill = auc_optim, label = auc_optim)) +
 
 Et la graphique obtenu est :
 
-![](assets/gridsearch.png)
+![](/assets/gridsearch.png)
 
  
 
@@ -306,7 +306,7 @@ plot.roc(y_test, preds, col = 'blue')
 plot.roc(y_test, preds_best, print.auc = T, print.auc.y = 0.5, xlim = c(1,0), col = 'black', add = TRUE)
 ```
 
-![](assets/unnamed-chunk-19-1.png)
+![](/assets/unnamed-chunk-19-1.png)
 
 5 Importance des variables
 ==========================
