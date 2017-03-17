@@ -39,6 +39,7 @@ for(i in 1:10){
 
 write.csv(data, file='bank-additional-full-atelier.csv', sep = ';', row.names = F)
 -->
+
 2 Traitement des variables
 ==========================
 
