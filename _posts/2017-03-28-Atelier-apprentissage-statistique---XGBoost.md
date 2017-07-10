@@ -365,16 +365,6 @@ L'implémentation de la méthode *grid search* est beaucoup plus facile avec ce 
 
 ***Question 12*** : pour tous les modèles calculés, récupérer l'AUC calculé par *cross-validation* et sur l'échantillon de test. Est-ce que l'AUC "CV" est un indicateur fiable de la performance sur les données test ? Pourquoi ?
 
-<!--
-AUC       Test      CV
-LogReg    0,93379
-Overfit   0,92972   0,93496
-Base      0,94784   0,94760
-Best CV   0,94985   0,94848
-
-          Test AUC  OOB err
-RF        0,94317   0,08509
-Best RF   0,94253   0,08254
 
 6.6 Note sur le calcul d'importance des forêts aléatoires
 ---------------------------------------------------------
