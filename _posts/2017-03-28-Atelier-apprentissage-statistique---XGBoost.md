@@ -37,7 +37,7 @@ for(i in 1:10){
 }
 
 write.csv(data, file='bank-additional-full-atelier.csv', sep = ';', row.names = F)
--->
+
 2 Traitement des variables
 ==========================
 
@@ -132,7 +132,7 @@ ggplot(xgb$evaluation_log, aes(x=iter, y=train_auc)) +
   ylab('AUC échantillon apprentissage')
 ```
 
-![](20170404_Atelier_XGBoost_files/figure-markdown_github/unnamed-chunk-8-1.png)
+![](/assets/unnamed-chunk-8-1.png)
 
 L'AUC semble augmenter au fur et à mesure que le nombre d'itérations augmente.
 ***Question 1*** : est-il possible d'obtenir un AUC égal à 1 ?
@@ -149,7 +149,7 @@ Le résultat doit être similaire à cette courbe :
     ## [1]  train-auc:0.957396 
     ## [35] train-auc:1.000000
 
-![](20170404_Atelier_XGBoost_files/figure-markdown_github/unnamed-chunk-9-1.png)
+![](/assets/unnamed-chunk-9-1.png)
 
 4.2 Validation croisée
 ----------------------
@@ -189,7 +189,7 @@ Une autre manière de faire, fortement recommandée, est d'utiliser la validatio
 
 3.  Faire la moyenne des 5 indicateurs de performance obtenus.
 
-![](5fold.png)
+![](/assets/5fold.png)
 
  
 
@@ -219,7 +219,8 @@ ggplot(xgb_cv$evaluation_log, aes(x = iter)) +
   ylab('AUC')
 ```
 
-<!-- On voit bien que les performances sur les données utilisées pour le modèle sont trop optimistes : à partir d'un certain nombre d'itérations les performances mesurées par validation croisée stagnent puis diminuent légèrement. Le modèle a parfaitement collé aux données mais a appris des règles qui ne se généralisent pas à de nouvelles données. -->
+<!-- On voit bien que les performances sur les données utilisées pour le modèle sont trop optimistes : à partir d'un certain nombre d'itérations les performances mesurées par validation croisée stagnent puis diminuent légèrement. Le modèle a parfaitement collé aux données mais a appris des règles qui ne se généralisent pas à de nouvelles données.
+
 4.3 Optimisation des hyper-paramètres
 -------------------------------------
 
@@ -271,7 +272,7 @@ ggplot(tuning, aes(x = depth, y = eta, fill = auc_optim, label = auc_optim)) +
 
 Et le graphique obtenu est :
 
-![](gridsearch.png)
+![](/assets/gridsearch.png)
 
  
 
@@ -304,7 +305,7 @@ plot.roc(y_test, preds, col = 'blue')
 plot.roc(y_test, preds_best, print.auc = T, print.auc.y = 0.5, xlim = c(1,0), col = 'black', add = TRUE)
 ```
 
-![](20170404_Atelier_XGBoost_files/figure-markdown_github/unnamed-chunk-19-1.png)
+![](/assets/unnamed-chunk-19-1.png)
 
 5 Importance des variables
 ==========================
@@ -388,7 +389,7 @@ Best CV   0,94985   0,94848
           Test AUC  OOB err
 RF        0,94317   0,08509
 Best RF   0,94253   0,08254
--->
+
 6.6 Note sur le calcul d'importance des forêts aléatoires
 ---------------------------------------------------------
 
@@ -440,8 +441,8 @@ Sur le serveur, qui dispose de 12 coeurs, la parallélisation apporte un gain de
 | 7         | 6,3                   |
 | 8         | 18,1                  |
 
-7 C kiki ka gagné ?
-===================
+7 Comparaison avec d'autres modèles
+===================================
 
 En évaluant les performances de chaque algorithme sur l'échantillon test (via l'AUC), nous obtenons les résultats suivants :
 
@@ -454,4 +455,4 @@ En évaluant les performances de chaque algorithme sur l'échantillon test (via 
 | XGBoost (défaut)          | 94,784%     |
 | XGBoost optimisé          | 94,985%     |
 
-![](bg.png)
+![](/assets/bg.png)
