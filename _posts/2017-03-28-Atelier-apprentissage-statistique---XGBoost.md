@@ -26,18 +26,6 @@ Nous avons déjà récupéré les données, recodé la cible de *yes*/*no* en 1/
 data <- fread('bank-additional-full-atelier.csv', sep=';', data.table = FALSE)
 ```
 
-<!--
-data$y <- (data$y == 'yes') %>% as.numeric
-
-Rajoutons quelques variables bruitées, c'est-à-dire indépendantes de la cible à modéliser, afin de voir si nos algorithmes sauront ne pas faire de __sur-apprentissage__ sur ces variables.
-
-for(i in 1:10){
-  set.seed(1234)
-  data[, paste0('var', i)] <- sample.int(i+1, size = nrow(data), replace = TRUE)
-}
-
-write.csv(data, file='bank-additional-full-atelier.csv', sep = ';', row.names = F)
-
 2 Traitement des variables
 ==========================
 
