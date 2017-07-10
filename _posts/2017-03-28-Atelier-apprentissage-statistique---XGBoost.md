@@ -207,8 +207,6 @@ ggplot(xgb_cv$evaluation_log, aes(x = iter)) +
   ylab('AUC')
 ```
 
-<!-- On voit bien que les performances sur les données utilisées pour le modèle sont trop optimistes : à partir d'un certain nombre d'itérations les performances mesurées par validation croisée stagnent puis diminuent légèrement. Le modèle a parfaitement collé aux données mais a appris des règles qui ne se généralisent pas à de nouvelles données.
-
 4.3 Optimisation des hyper-paramètres
 -------------------------------------
 
